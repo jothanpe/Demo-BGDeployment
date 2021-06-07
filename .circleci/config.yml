@@ -48,7 +48,7 @@ jobs:
             --no-paginate --output text > /tmp/pipelineid-last
       - run: 
           name: Install dependencies
-          command: yum install -y tar & yum install -y gzip
+          command: yum install -y tar gzip
       - persist_to_workspace:
           root: /tmp
           paths: [pipelineid-last]
