@@ -30,7 +30,7 @@ jobs:
             aws cloudformation deploy \
             --template-file bucket.yml \
             --stack-name "FE-${CIRCLE_WORKFLOW_ID:0:7}" \
-            --parameter-overrides PipelineID="FE-${CIRCLE_WORKFLOW_ID:0:7}"
+            --parameter-overrides NAME="FE-${CIRCLE_WORKFLOW_ID:0:7}"
       - run:
           name: Copy files to S3
           command: |
