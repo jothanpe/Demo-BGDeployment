@@ -17,7 +17,13 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "64:d5:f1:45:24:78:e0:e8:5d:5e:f9:87:26:98:ea:1b"
-      - run: ansible-playbook main-remote.yml -i inventory
+      - run:
+          name: Installing dependencies
+          command: |
+            apk add --update ansible 
+      - run: 
+          name: Running Ansible
+          command: ansible-playbook main-remote.yml -i inventory
 
 workflows:
   cloudformation-deployment:
