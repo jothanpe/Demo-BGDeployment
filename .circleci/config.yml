@@ -79,7 +79,7 @@ jobs:
           command: |
             export PreviousPipelineID=$(cat /tmp/pipelineid-last)
             aws s3 rm "s3://$PreviousPipelineID" --recursive
-            aws cloudformation delete-stack --stack-name "${PreviousPipelineID}"
+            aws cloudformation delete-stack --stack-name "$PreviousPipelineID"
   # execute_ansible_playbook:
   #   docker:
   #     - image: python:3.7-alpine3.11
