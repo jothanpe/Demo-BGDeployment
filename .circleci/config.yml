@@ -48,7 +48,7 @@ jobs:
             --no-paginate --output text > /tmp/pipelineid-last
       - persist_to_workspace:
           root: /tmp
-          path: [pipelineid-last]
+          paths: [pipelineid-last]
   promote_to_production:
     docker:
       - image: amazon/aws-cli
