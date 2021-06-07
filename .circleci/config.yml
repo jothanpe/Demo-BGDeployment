@@ -77,7 +77,7 @@ jobs:
       - run: |
           cat /tmp/pipelineid-last
           export PreviousPipelineID=$(cat /tmp/pipelineid-last)
-          cat $PreviousPipelineID
+          echo $PreviousPipelineID
       - run:
           name: Cleanup old frontend
           command: |
