@@ -8,4 +8,5 @@ jobs:
           aws clouformation create-stack --stack-name DemoBGDeployment --region $AWS_DEFAULT_REGION --template-body file://template.yml 
 workflows:
   cloudformation-deployment:
-    - create_infrastructure
+    jobs:
+      - create_infrastructure
