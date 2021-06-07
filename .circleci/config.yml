@@ -46,7 +46,9 @@ jobs:
             aws cloudformation \
             list-exports --query "Exports[?Name==\`PipelineID\`].Value" \
             --no-paginate --output text > /tmp/pipelineid-last
-      - run: yum install -y tar
+      - run: 
+          name: Install dependencies
+          command: yum install -y tar & yum install -y gzip
       - persist_to_workspace:
           root: /tmp
           paths: [pipelineid-last]
