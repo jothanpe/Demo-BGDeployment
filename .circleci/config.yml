@@ -81,7 +81,7 @@ jobs:
       - run:
           name: Cleanup old frontend
           command: |
-            aws s3 rm "s3://${PreviousPipelineID}" --recursive
+            aws s3 rm "s3://$PreviousPipelineID" --recursive
             aws cloudformation delete-stack --stack-name "${PreviousPipelineID}"
   # execute_ansible_playbook:
   #   docker:
