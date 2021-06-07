@@ -69,11 +69,11 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - attach_workspace:
-          at: /tmp/pipelineid-last
       - run: 
           name: Install dependencies
           command: yum install -y tar gzip
+      - attach_workspace:
+          at: /tmp/pipelineid-last
       - run: |
           PreviousPipelineID=$(cat /tmp/pipelineid-last)
       - run:
