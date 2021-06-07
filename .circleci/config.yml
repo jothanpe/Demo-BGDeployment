@@ -71,6 +71,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: /tmp/pipelineid-last
+      - run: 
+          name: Install dependencies
+          command: yum install -y tar gzip
       - run: |
           PreviousPipelineID=$(cat /tmp/pipelineid-last)
       - run:
