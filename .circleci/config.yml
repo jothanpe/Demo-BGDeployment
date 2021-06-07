@@ -4,6 +4,7 @@ jobs:
     docker: 
       - image: amazon/aws-cli
     steps:
+      - run: pwd
       - run: ls -alh
       #- run: |
       #    aws cloudformation create-stack --stack-name DemoBGDeployment --region $AWS_DEFAULT_REGION --template-body file://template.yml 
