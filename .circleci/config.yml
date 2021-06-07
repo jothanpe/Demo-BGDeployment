@@ -5,7 +5,7 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - run: |
-          aws clouformation create-stack --stack-name DemoBGDeployment --region $AWS_DEFAULT_REGION --template-body file://template.yml 
+          aws cloudformation create-stack --stack-name DemoBGDeployment --region $AWS_DEFAULT_REGION --template-body file://template.yml 
 workflows:
   cloudformation-deployment:
     jobs:
