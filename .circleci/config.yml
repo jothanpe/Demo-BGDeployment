@@ -18,6 +18,9 @@ jobs:
           fingerprints:
             - "64:d5:f1:45:24:78:e0:e8:5d:5e:f9:87:26:98:ea:1b"
       - run:
+          name: Keyscan
+          command: ssh-keyscan -H 54.227.87.42 >> ~/.ssh/known_hosts
+      - run:
           name: Installing dependencies
           command: |
             apk add --update ansible 
