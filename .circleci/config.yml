@@ -42,7 +42,7 @@ jobs:
       - checkout
       - run:
           name: List last execution
-          commands: |
+          command: |
             aws cloudformation \
             list-exports --query "Exports[?Name==\`PipelineID\`].Value" \
             --no-paginate --output text > /tmp/pipelineid-last
