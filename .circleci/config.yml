@@ -74,13 +74,10 @@ jobs:
           command: yum install -y tar gzip
       - attach_workspace:
           at: /tmp
-      - run: |
-          cat /tmp/pipelineid-last
-          export PreviousPipelineID=$(cat /tmp/pipelineid-last)
-          echo $PreviousPipelineID
       - run:
           name: Cleanup old frontend
           command: |
+            export PreviousPipelineID=$(cat /tmp/pipelineid-last)
             aws s3 rm "s3://$PreviousPipelineID" --recursive
             aws cloudformation delete-stack --stack-name "${PreviousPipelineID}"
   # execute_ansible_playbook:
