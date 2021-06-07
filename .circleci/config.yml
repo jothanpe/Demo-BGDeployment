@@ -75,7 +75,9 @@ jobs:
       - attach_workspace:
           at: /tmp
       - run: |
-          PreviousPipelineID=$(cat /tmp/pipelineid-last)
+          cat /tmp/pipelineid-last
+          export PreviousPipelineID=$(cat /tmp/pipelineid-last)
+          cat $PreviousPipelineID
       - run:
           name: Cleanup old frontend
           command: |
